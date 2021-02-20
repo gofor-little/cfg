@@ -47,4 +47,4 @@ Ensure the following environment variables are set, usually with a .env file.
 * ```AWS_REGION``` (a valid AWS region)
 * ```TEST_KMS_KEY_ARN``` (a valid KMS key ARN)
 
-Run ```go test -v -race ./...``` in the root directory.
+Run ```go test -v ./...``` in the root directory.
