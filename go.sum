@@ -5,8 +5,8 @@ github.com/davecgh/go-spew v1.1.0 h1:ZDRjVQ15GmhC3fiQ8ni8+OwkZQO4DARzQgrnXU1Liz8
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/gofor-little/aws-sdk-mock v0.1.1 h1:kV1IKPdKnlR8vqXKJb/lpiV3yaDK8bIFLRl7s/veQgo=
 github.com/gofor-little/aws-sdk-mock v0.1.1/go.mod h1:Ej2Q5BuJj1onlACmKkFgUAnGfkO9xzKNasCePDb04gQ=
-github.com/gofor-little/env v0.4.3 h1:FqtZmTzUxju/DBSSv/m/3noBt10pdU+7695XgHJtaoo=
-github.com/gofor-little/env v0.4.3/go.mod h1:aPkmDX9t/3zhViWDnhNH8RtlSbSOoZ9dmKbUo12tnN8=
+github.com/gofor-little/env v0.4.4 h1:cLDgD7Jp5vx75bNBfxZwBHIFXhePqjNXbeIqtXsrAyY=
+github.com/gofor-little/env v0.4.4/go.mod h1:Jefo+ty+Xy9xSIlClJ73QJR1eCV0fCEU4denlQnc3z4=
 github.com/jmespath/go-jmespath v0.4.0 h1:BEgLn5cpjn8UN1mAw4NjwDrS35OdebyEtFe+9YPoQUg=
 github.com/jmespath/go-jmespath v0.4.0/go.mod h1:T8mJZnbsbmF+m6zOOFylbeCJqk5+pHWvzYPziyZiYoo=
 github.com/jmespath/go-jmespath/internal/testify v1.5.1 h1:shLQSRRSCCPj3f2gpwzGwWFoC7ycTf1rcQZHOlsJ6N8=
