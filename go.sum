@@ -1,10 +1,9 @@
-github.com/aws/aws-sdk-go v1.37.10/go.mod h1:hcU610XS61/+aQV88ixoOzUoG7v3b31pl2zKMmprdro=
 github.com/aws/aws-sdk-go v1.37.14 h1:thuR1hd1doCvsaMDYDMhqCGSmw39bSvZaw+DPGhMm5w=
 github.com/aws/aws-sdk-go v1.37.14/go.mod h1:hcU610XS61/+aQV88ixoOzUoG7v3b31pl2zKMmprdro=
 github.com/davecgh/go-spew v1.1.0 h1:ZDRjVQ15GmhC3fiQ8ni8+OwkZQO4DARzQgrnXU1Liz8=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
-github.com/gofor-little/aws-sdk-mock v0.1.1 h1:kV1IKPdKnlR8vqXKJb/lpiV3yaDK8bIFLRl7s/veQgo=
-github.com/gofor-little/aws-sdk-mock v0.1.1/go.mod h1:Ej2Q5BuJj1onlACmKkFgUAnGfkO9xzKNasCePDb04gQ=
+github.com/gofor-little/aws-sdk-mock v0.1.2 h1:9DBQWzlMcxiOU6rnTECS3WDxBzLaqogUhAkCS/aHPXk=
+github.com/gofor-little/aws-sdk-mock v0.1.2/go.mod h1:D9fpSHdv1mt7MjXK26ZDQ92pEdHxIMC8OMsNa48Fo+U=
 github.com/gofor-little/env v0.4.4 h1:cLDgD7Jp5vx75bNBfxZwBHIFXhePqjNXbeIqtXsrAyY=
 github.com/gofor-little/env v0.4.4/go.mod h1:Jefo+ty+Xy9xSIlClJ73QJR1eCV0fCEU4denlQnc3z4=
 github.com/jmespath/go-jmespath v0.4.0 h1:BEgLn5cpjn8UN1mAw4NjwDrS35OdebyEtFe+9YPoQUg=
