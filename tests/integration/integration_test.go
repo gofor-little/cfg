@@ -26,14 +26,10 @@ func setup(t *testing.T) string {
 
 	require.NoError(t, cfg.Initialize(env.Get("AWS_PROFILE", ""), env.Get("AWS_REGION", "")))
 
-	kmsKeyArn, err := env.MustGet("TEST_KMS_KEY_ARN")
-	require.NoError(t, err)
-
 	data, err := json.Marshal(&TestConfig{"Value-1", "Value-2"})
 	require.NoError(t, err)
 
 	input := &secretsmanager.CreateSecretInput{
-		KmsKeyId:     aws.String(kmsKeyArn),
 		Name:         aws.String(fmt.Sprintf("ConfigTest_Integration_%d", time.Now().Unix())),
 		SecretString: aws.String(string(data)),
 	}

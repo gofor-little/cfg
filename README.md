@@ -1,11 +1,11 @@
 ## A package for loading config data from AWS SecretsManager
 
-![GitHub tag (latest SemVer pre-release)](https://img.shields.io/github/v/tag/gofor-little/config?include_prereleases)
-![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/gofor-little/config)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://raw.githubusercontent.com/gofor-little/config/main/LICENSE)
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/gofor-little/config/CI)
-[![Go Report Card](https://goreportcard.com/badge/github.com/gofor-little/config)](https://goreportcard.com/report/github.com/gofor-little/config)
-[![PkgGoDev](https://pkg.go.dev/badge/github.com/gofor-little/config)](https://pkg.go.dev/github.com/gofor-little/config)
+![GitHub tag (latest SemVer pre-release)](https://img.shields.io/github/v/tag/gofor-little/cfg?include_prereleases)
+![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/gofor-little/cfg)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://raw.githubusercontent.com/gofor-little/cfg/main/LICENSE)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/gofor-little/cfg/CI)
+[![Go Report Card](https://goreportcard.com/badge/github.com/gofor-little/cfg)](https://goreportcard.com/report/github.com/gofor-little/cfg)
+[![PkgGoDev](https://pkg.go.dev/badge/github.com/gofor-little/cfg)](https://pkg.go.dev/github.com/gofor-little/cfg)
 
 ### Introduction
 * Secure config loading.
@@ -19,7 +19,7 @@ package main
 import (
 	"context"
 
-	"github.com/gofor-little/config"
+	"github.com/gofor-little/cfg"
 )
 
 type Config struct {
@@ -28,14 +28,14 @@ type Config struct {
 }
 
 func main() {
-	// Initialize the config package.
-	if err := config.Initialize("AWS_PROFILE", "AWS_REGION"); err != nil {
+	// Initialize the cfg package.
+	if err := cfg.Initialize("AWS_PROFILE", "AWS_REGION"); err != nil {
 		panic(err)
 	}
 
 	// Load and parse the config data into the passed Config struct.
 	cfg := &Config{}
-	if err := config.Load(context.Background(), "AWS_SECRET_ARN", cfg); err != nil {
+	if err := cfg.Load(context.Background(), "AWS_SECRET_ARN", cfg); err != nil {
 		panic(err)
 	}
 }
@@ -45,6 +45,5 @@ func main() {
 Ensure the following environment variables are set, usually with a .env file.
 * ```AWS_PROFILE``` (an AWS CLI profile name)
 * ```AWS_REGION``` (a valid AWS region)
-* ```TEST_KMS_KEY_ARN``` (a valid KMS key ARN)
 
 Run ```go test -v ./...``` in the root directory.
