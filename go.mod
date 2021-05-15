@@ -1,4 +1,4 @@
-module github.com/gofor-little/config
+module github.com/gofor-little/cfg
 
 go 1.16
 

@@ -1,4 +1,4 @@
-package config_test
+package cfg_test
 
 import (
 	"encoding/json"
@@ -11,7 +11,7 @@ import (
 	"github.com/gofor-little/env"
 	"github.com/stretchr/testify/require"
 
-	"github.com/gofor-little/config"
+	"github.com/gofor-little/cfg"
 )
 
 type TestConfig struct {
@@ -24,7 +24,7 @@ func setup(t *testing.T) string {
 		t.Logf("failed to load .env file, ignore if running in CI/CD: %v", err)
 	}
 
-	require.NoError(t, config.Initialize(env.Get("AWS_PROFILE", ""), env.Get("AWS_REGION", "")))
+	require.NoError(t, cfg.Initialize(env.Get("AWS_PROFILE", ""), env.Get("AWS_REGION", "")))
 
 	kmsKeyArn, err := env.MustGet("TEST_KMS_KEY_ARN")
 	require.NoError(t, err)
@@ -39,7 +39,7 @@ func setup(t *testing.T) string {
 	}
 	require.NoError(t, input.Validate())
 
-	output, err := config.SecretsManagerClient.CreateSecret(input)
+	output, err := cfg.SecretsManagerClient.CreateSecret(input)
 	require.NoError(t, err)
 
 	return *output.ARN
@@ -52,6 +52,6 @@ func teardown(t *testing.T, secretArn string) {
 	}
 	require.NoError(t, input.Validate())
 
-	_, err := config.SecretsManagerClient.DeleteSecret(input)
+	_, err := cfg.SecretsManagerClient.DeleteSecret(input)
 	require.NoError(t, err)
 }
