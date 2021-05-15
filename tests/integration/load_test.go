@@ -1,4 +1,4 @@
-package config_test
+package cfg_test
 
 import (
 	"context"
@@ -7,7 +7,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/gofor-little/config"
+	"github.com/gofor-little/cfg"
 )
 
 func TestLoad(t *testing.T) {
@@ -25,7 +25,7 @@ func TestLoad(t *testing.T) {
 		name := fmt.Sprintf("%s_%d", tc.name, i)
 
 		t.Run(name, func(t *testing.T) {
-			require.Equal(t, tc.want, config.Load(context.Background(), secretArn, &TestConfig{}))
+			require.Equal(t, tc.want, cfg.Load(context.Background(), secretArn, &TestConfig{}))
 		})
 	}
 }

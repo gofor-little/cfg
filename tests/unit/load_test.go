@@ -8,11 +8,11 @@ import (
 	"github.com/stretchr/testify/require"
 	"github.com/gofor-little/aws-sdk-mock"
 
-	"github.com/gofor-little/config"
+	"github.com/gofor-little/cfg"
 )
 
 func TestLoad(t *testing.T) {
-	config.SecretsManagerClient = &mock.SecretsManagerClient{}
+	cfg.SecretsManagerClient = &mock.SecretsManagerClient{}
 
 	testCases := []struct {
 		name      string
@@ -26,7 +26,7 @@ func TestLoad(t *testing.T) {
 		name := fmt.Sprintf("%s_%d", tc.name, i)
 
 		t.Run(name, func(t *testing.T) {
-			require.Equal(t, tc.want, config.Load(context.Background(), tc.secretArn, &struct {
+			require.Equal(t, tc.want, cfg.Load(context.Background(), tc.secretArn, &struct {
 				Key1 string `json:"key-1"`
 				Key2 string `json:"key-2"`
 			}{}))
