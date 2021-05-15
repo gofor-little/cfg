@@ -34,8 +34,8 @@ func main() {
 	}
 
 	// Load and parse the config data into the passed Config struct.
-	cfg := &Config{}
-	if err := cfg.Load(context.Background(), "AWS_SECRET_ARN", cfg); err != nil {
+	config := &Config{}
+	if err := cfg.Load(context.Background(), "AWS_SECRET_ARN", config); err != nil {
 		panic(err)
 	}
 }
