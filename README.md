@@ -29,7 +29,7 @@ type Config struct {
 
 func main() {
 	// Initialize the cfg package.
-	if err := cfg.Initialize("AWS_PROFILE", "AWS_REGION"); err != nil {
+	if err := cfg.Initialize(context.Background(), "AWS_PROFILE", "AWS_REGION"); err != nil {
 		panic(err)
 	}
 

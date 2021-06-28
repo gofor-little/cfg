@@ -1,13 +1,14 @@
 package cfg_test
 
 import (
+	"context"
 	"encoding/json"
 	"fmt"
 	"testing"
 	"time"
 
-	"github.com/aws/aws-sdk-go/aws"
-	"github.com/aws/aws-sdk-go/service/secretsmanager"
+	"github.com/aws/aws-sdk-go-v2/aws"
+	"github.com/aws/aws-sdk-go-v2/service/secretsmanager"
 	"github.com/gofor-little/env"
 	"github.com/stretchr/testify/require"
 
@@ -24,18 +25,17 @@ func setup(t *testing.T) string {
 		t.Logf("failed to load .env file, ignore if running in CI/CD: %v", err)
 	}
 
-	require.NoError(t, cfg.Initialize(env.Get("AWS_PROFILE", ""), env.Get("AWS_REGION", "")))
+	require.NoError(t, cfg.Initialize(context.Background(), env.Get("AWS_PROFILE", ""), env.Get("AWS_REGION", "")))
 
 	data, err := json.Marshal(&TestConfig{"Value-1", "Value-2"})
 	require.NoError(t, err)
 
 	input := &secretsmanager.CreateSecretInput{
-		Name:         aws.String(fmt.Sprintf("ConfigTest_Integration_%d", time.Now().Unix())),
+		Name:         aws.String(fmt.Sprintf("gofor-little-cfg-test-secret-%d", time.Now().Unix())),
 		SecretString: aws.String(string(data)),
 	}
-	require.NoError(t, input.Validate())
 
-	output, err := cfg.SecretsManagerClient.CreateSecret(input)
+	output, err := cfg.SecretsManagerClient.CreateSecret(context.Background(), input)
 	require.NoError(t, err)
 
 	return *output.ARN
@@ -43,11 +43,10 @@ func setup(t *testing.T) string {
 
 func teardown(t *testing.T, secretArn string) {
 	input := &secretsmanager.DeleteSecretInput{
-		ForceDeleteWithoutRecovery: aws.Bool(true),
+		ForceDeleteWithoutRecovery: true,
 		SecretId:                   aws.String(secretArn),
 	}
-	require.NoError(t, input.Validate())
 
-	_, err := cfg.SecretsManagerClient.DeleteSecret(input)
+	_, err := cfg.SecretsManagerClient.DeleteSecret(context.Background(), input)
 	require.NoError(t, err)
 }
