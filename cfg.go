@@ -15,7 +15,7 @@ var (
 	SecretsManagerClient *secretsmanager.Client
 )
 
-// Initialize will initialize the config package. Both the profile
+// Initialize will initialize the cfg package. Both the profile
 // and region parameters are optional if authentication can be achieved
 // via another method. For example, environment variables or IAM roles.
 func Initialize(ctx context.Context, profile string, region string) error {

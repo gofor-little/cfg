@@ -21,7 +21,7 @@ type TestConfig struct {
 }
 
 func setup(t *testing.T) string {
-	if err := env.Load("../../.env"); err != nil {
+	if err := env.Load(".env"); err != nil {
 		t.Logf("failed to load .env file, ignore if running in CI/CD: %v", err)
 	}
 

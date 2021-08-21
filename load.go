@@ -23,7 +23,7 @@ func Load(ctx context.Context, secretARN string, v interface{}) error {
 	}
 
 	if err := json.Unmarshal([]byte(secret), v); err != nil {
-		return fmt.Errorf("failed to unmashal secret value: %w", err)
+		return fmt.Errorf("failed to unmarshal secret value: %w", err)
 	}
 
 	return nil
