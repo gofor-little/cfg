@@ -3,7 +3,7 @@
 ![GitHub tag (latest SemVer pre-release)](https://img.shields.io/github/v/tag/gofor-little/cfg?include_prereleases)
 ![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/gofor-little/cfg)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://raw.githubusercontent.com/gofor-little/cfg/main/LICENSE)
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/gofor-little/cfg/CI)
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/gofor-little/cfg/ci.yaml?branch=main)
 [![Go Report Card](https://goreportcard.com/badge/github.com/gofor-little/cfg)](https://goreportcard.com/report/github.com/gofor-little/cfg)
 [![PkgGoDev](https://pkg.go.dev/badge/github.com/gofor-little/cfg)](https://pkg.go.dev/github.com/gofor-little/cfg)
 
