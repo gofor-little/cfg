@@ -43,7 +43,7 @@ func setup(t *testing.T) string {
 
 func teardown(t *testing.T, secretArn string) {
 	input := &secretsmanager.DeleteSecretInput{
-		ForceDeleteWithoutRecovery: true,
+		ForceDeleteWithoutRecovery: aws.Bool(true),
 		SecretId:                   aws.String(secretArn),
 	}
 
