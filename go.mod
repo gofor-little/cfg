@@ -5,7 +5,7 @@ go 1.17
 require (
 	github.com/aws/aws-sdk-go-v2 v1.17.6
 	github.com/aws/aws-sdk-go-v2/config v1.18.16
-	github.com/aws/aws-sdk-go-v2/service/secretsmanager v1.18.7
+	github.com/aws/aws-sdk-go-v2/service/secretsmanager v1.19.0
 	github.com/gofor-little/env v1.0.11
 	github.com/stretchr/testify v1.8.2
 )
